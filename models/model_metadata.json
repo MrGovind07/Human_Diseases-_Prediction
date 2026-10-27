@@ -1,0 +1,152 @@
+{
+  "model_name": "Calibrated XGBoost Classifier",
+  "pipeline_type": "StandardScaler + XGBClassifier + CalibratedClassifierCV (Sigmoid, 5-Fold)",
+  "version": "2.4.0",
+  "created_at": "2026-10-27T07:14:35.000067",
+  "random_seed": 42,
+  "features": [
+    "Age",
+    "BMI",
+    "Blood_Pressure",
+    "Glucose_Level",
+    "Cholesterol",
+    "Heart_Rate",
+    "Smoking",
+    "Alcohol",
+    "Physical_Activity",
+    "Family_History"
+  ],
+  "dataset_statistics": {
+    "total_samples": 1000,
+    "train_samples": 800,
+    "test_samples": 200,
+    "class_balance": {
+      "1": 678,
+      "0": 322
+    },
+    "positive_rate": 0.678
+  },
+  "hyperparameters": {
+    "n_estimators": 150,
+    "learning_rate": 0.1,
+    "max_depth": 3,
+    "subsample": 0.8,
+    "colsample_bytree": 1.0,
+    "eval_metric": "logloss"
+  },
+  "production_metrics": {
+    "accuracy": 0.955,
+    "precision": 0.9774436090225563,
+    "recall": 0.9558823529411765,
+    "f1": 0.966542750929368,
+    "macro_f1": 0.9489202304265161,
+    "weighted_f1": 0.9552643378075427,
+    "roc_auc": 0.99609375,
+    "brier_score": 0.02705382049284707,
+    "confusion_matrix": {
+      "tn": 61,
+      "fp": 3,
+      "fn": 6,
+      "tp": 130,
+      "matrix": [
+        [
+          61,
+          3
+        ],
+        [
+          6,
+          130
+        ]
+      ]
+    },
+    "per_class_report": {
+      "0": {
+        "precision": 0.9104477611940298,
+        "recall": 0.953125,
+        "f1-score": 0.9312977099236641,
+        "support": 64.0
+      },
+      "1": {
+        "precision": 0.9774436090225563,
+        "recall": 0.9558823529411765,
+        "f1-score": 0.966542750929368,
+        "support": 136.0
+      },
+      "accuracy": 0.955,
+      "macro avg": {
+        "precision": 0.943945685108293,
+        "recall": 0.9545036764705883,
+        "f1-score": 0.9489202304265161,
+        "support": 200.0
+      },
+      "weighted avg": {
+        "precision": 0.9560049377174278,
+        "recall": 0.955,
+        "f1-score": 0.9552643378075427,
+        "support": 200.0
+      }
+    },
+    "roc_curve": {
+      "fpr": [
+        0.0,
+        0.0,
+        0.0,
+        0.015625,
+        0.015625,
+        0.046875,
+        0.046875,
+        0.0625,
+        0.0625,
+        0.140625,
+        0.140625,
+        1.0
+      ],
+      "tpr": [
+        0.0,
+        0.007352941176470588,
+        0.9338235294117647,
+        0.9338235294117647,
+        0.9411764705882353,
+        0.9411764705882353,
+        0.9705882352941176,
+        0.9705882352941176,
+        0.9926470588235294,
+        0.9926470588235294,
+        1.0,
+        1.0
+      ]
+    },
+    "calibration_curve": {
+      "prob_true": [
+        0.0,
+        0.125,
+        0.75,
+        1.0,
+        1.0,
+        0.5714285714285714,
+        1.0
+      ],
+      "prob_pred": [
+        0.02179227930144318,
+        0.204288768660259,
+        0.3209473418615317,
+        0.4574021779775378,
+        0.6673962039829131,
+        0.8173935034492275,
+        0.9841095705547502
+      ]
+    }
+  },
+  "feature_importance": {
+    "Age": 0.12403104454278946,
+    "BMI": 0.08448349684476852,
+    "Blood_Pressure": 0.09213636070489883,
+    "Glucose_Level": 0.10548017174005508,
+    "Cholesterol": 0.09976456314325333,
+    "Heart_Rate": 0.032330289483070374,
+    "Smoking": 0.13773566484451294,
+    "Alcohol": 0.1249229833483696,
+    "Physical_Activity": 0.08517419546842575,
+    "Family_History": 0.11394116282463074
+  }
+}
